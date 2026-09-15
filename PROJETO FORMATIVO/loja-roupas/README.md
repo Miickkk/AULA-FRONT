@@ -13,7 +13,7 @@
 - Quadrinhos
 
 
-- **Roupas**
+  **Roupas**
     - Camisetas
     - Camisetas oversized
     - Moletons
@@ -23,7 +23,7 @@
     - Shorts
     - Vestidos
 
-- **Acessórios**
+  **Acessórios**
     - Bonés
     - Gorros
     - Bolsas
@@ -32,7 +32,7 @@
     - Colares
     - Pulseiras
 
-- **Cores**
+  **Cores**
     - Preto 
     - Branco
     - Roxo 
