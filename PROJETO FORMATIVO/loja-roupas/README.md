@@ -3,9 +3,13 @@
 ## **Loja Virtual de Moda Geek** ##
 
 -Anime
+
 -Mangá
+
 -Games
+
 -RPG
+
 -Quadrinhos
 
 
