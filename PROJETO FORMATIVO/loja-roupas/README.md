@@ -2,39 +2,39 @@
 
 ## **Loja Virtual de Moda Geek** ##
 
--Anime
+- Anime
 
--Mangá
+- Mangá
 
--Games
+- Games
 
--RPG
+- RPG
 
--Quadrinhos
+- Quadrinhos
 
 
 - **Roupas**
-    Camisetas
-    Camisetas oversized
-    Moletons
-    Jaquetas
-    Croppeds
-    Calças
-    Shorts
-    Vestidos
+    - Camisetas
+    - Camisetas oversized
+    - Moletons
+    - Jaquetas
+    - Croppeds
+    - Calças
+    - Shorts
+    - Vestidos
 
 - **Acessórios**
-    Bonés
-    Gorros
-    Bolsas
-    Mochilas
-    Chaveiros
-    Colares
-    Pulseiras
+    - Bonés
+    - Gorros
+    - Bolsas
+    - Mochilas
+    - Chaveiros
+    - Colares
+    - Pulseiras
 
 - **Cores**
-    Preto 
-    Branco
-    Roxo 
-    Azul 
-    Cinza 
+    - Preto 
+    - Branco
+    - Roxo 
+    - Azul 
+    - Cinza 
