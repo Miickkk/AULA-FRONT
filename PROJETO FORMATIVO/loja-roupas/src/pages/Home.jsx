@@ -158,7 +158,7 @@ function Home() {
                                 },
                             }}
                         >
-                            VER COLEÇÕES ⭢
+                            PROMOÇÕES ⭢
                         </Button>
                     </Box>
                 </Box>
