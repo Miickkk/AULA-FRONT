@@ -18,23 +18,18 @@
     - Camisetas oversized
     - Moletons
     - Jaquetas
-    - Croppeds
     - Calças
-    - Shorts
-    - Vestidos
 
   **Acessórios**
     - Bonés
-    - Gorros
-    - Bolsas
     - Mochilas
     - Chaveiros
     - Colares
-    - Pulseiras
 
   **Cores**
-    - Preto 
-    - Branco
-    - Roxo 
-    - Azul 
-    - Cinza 
+    -preto: #08080D;
+    -preto-card: #111116;
+    -branco: #F5F5F7;
+    -roxo: #7C3AED;
+    -roxo-claro: #9B6DFF;
+    -amarelo: #FFD21F;
