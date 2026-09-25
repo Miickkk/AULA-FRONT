@@ -81,450 +81,443 @@ function Home() {
     ];
 
 
-    {/* -------------------------------------------------------------------------------------------------------------------------------------- */ }
+{/* -------------------------------------------------------------------------------------------------------------------------------------- */ }
 
 
-    return (
+return (
+    <Box
+        sx={{
+            minHeight: '100vh',
+            backgroundColor: '#08080D',
+            color: '#F5F5F5',
+            py: 6,
+        }}
+    >
+        <Container maxWidth="xl">
+            <Box
+                sx={{
+                    minHeight: 400,
+                    border: '1px solid #7C3AED',
+                    borderRadius: 3,
+                    overflow: 'hidden',
+                    position: 'relative',
+                    display: 'flex',
+                    alignItems: 'center',
+                    mb: 5,
+                    backgroundImage: `linear-gradient(90deg, #08080dfa 0%, rgba(8,8,13,0.82) 0%, rgba(8,8,13,0.25) 0%), url(${hero})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    boxShadow: '0 0 30px #7c3aed33',
+                }}
+            >
+                <Box sx={{ p: { xs: 4, md: 7 }, maxWidth: 650 }}>
+                    <Typography
+                        sx={{
+                            color: '#FFD21F',
+                            fontWeight: 'bold',
+                            letterSpacing: 2,
+                            mb: 1,
+                        }}
+                    >
+                        MODA GEEK
+                    </Typography>
+                    <Typography
+                        variant="h1"
+                        sx={{
+                            fontSize: { xs: '2.5rem', md: '4rem' },
+                            fontWeight: 900,
+                            lineHeight: 1,
+                            mb: 2,
+                        }}
+                    >
+                        SEU MUNDO
+                        <br />
+                        <span style={{ color: '#7C3AED' }}>
+                            SEU ESTILO
+                        </span>
+                    </Typography>
+                    <Typography
+                        sx={{
+                            color: '#D1D1D6',
+                            fontSize: '1.1rem',
+                            mb: 3,
+                        }}
+                    >
+                        Roupas e acessórios de todo o universo geek.
+                    </Typography>
+                    <Button
+                        variant="contained"
+                        sx={{
+                            backgroundColor: '#FFD21F',
+                            color: '#08080D',
+                            fontWeight: 'bold',
+                            px: 4,
+                            py: 1.5,
+                            '&:hover': {
+                                backgroundColor: '#F5C400',
+                            },
+                        }}
+                    >
+                        VER COLEÇÕES ⭢
+                    </Button>
+                </Box>
+            </Box>
+
+
+{/* -------------------------------------------------------------------------------------------------------------------------------------- */}
+
+
+{/* CATEGORIAS */}
+<Box
+    sx={{
+        mb: 6,
+        display: 'grid',
+        gridTemplateColumns: {
+            xs: 'repeat(2, 1fr)',
+            sm: 'repeat(3, 1fr)',
+            md: 'repeat(6, 1fr)',
+        },
+        gap: 2,
+    }}
+>
+    {categorias.map((categoria) => (
         <Box
+            key={categoria.nome}
             sx={{
-                minHeight: '100vh',
-                backgroundColor: '#08080D',
-                color: '#F5F5F5',
-                py: 6,
+                height: 145,
+                backgroundColor: '#0D0D13',
+                border: '1px solid #7C3AED',
+                borderRadius: 1,
+                position: 'relative',
+                overflow: 'hidden',
+                textAlign: 'center',
+                cursor: 'pointer',
+                transition: '0.3s',
+                '&::before': {
+                    content: '""',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: 14,
+                    height: 14,
+                    borderTop: '3px solid #FFD21F',
+                    borderLeft: '3px solid #FFD21F',
+                },
+                '&::after': {
+                    content: '""',
+                    position: 'absolute',
+                    bottom: 0,
+                    right: 0,
+                    width: 35,
+                    height: 35,
+                    borderBottom: '3px solid #FFD21F',
+                    borderRight: '3px solid #FFD21F',
+                },
+                '&:hover': {
+                    transform: 'translateY(-4px)',
+                    borderColor: '#9B6DFF',
+                    boxShadow: '0 0 18px #7c3aed4d',
+                },
             }}
         >
-            <Container maxWidth="xl">
-                <Box
+            {/* IMAGEM = CATEGORIA */}
+            <Box
+                sx={{
+                    height: 80,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    pt: 1,
+                }}
+            >
+                <img
+                    src={categoria.imagem}
+                    alt={categoria.nome}
+                    style={{
+                        maxWidth: '75px',
+                        maxHeight: '65px',
+                        objectFit: 'contain',
+                    }}
+                />
+            </Box>
+            <Typography
+                sx={{
+                    fontSize: 14,
+                    fontWeight: 'bold',
+                    color: '#F5F5F5',
+                    mt: 1,
+                }}
+            >
+                {categoria.nome}
+            </Typography>
+            <Typography
+                sx={{
+                    fontSize: 11,
+                    color: '#FFD21F',
+                    mt: 0.7,
+                }}
+            >
+                VER TUDO ⭢
+            </Typography>
+        </Box>
+    ))}
+</Box>
+
+
+{/* -------------------------------------------------------------------------------------------------------------------------------------- */}
+
+
+{/* PRODUTOS */}
+<Box sx={{ mb: 6 }}>
+    <Box
+        sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            mb: 3,
+            position: 'relative',
+        }}
+    >
+        <Box
+            sx={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 1.5,
+            }}
+        >
+            <Box
+                sx={{
+                    width: 20,
+                    height: 20,
+                    backgroundColor: '#FFD21F',
+                    clipPath: 'polygon(0 0, 100% 0, 65% 100%, 0 100%)',
+                }}
+            />
+            <Typography
+                variant="h5"
+                sx={{
+                    fontWeight: 900,
+                    color: '#F5F5F5',
+                    letterSpacing: 0.5,
+                }}
+            >
+                PRODUTOS EM DESTAQUE
+            </Typography>
+        </Box>
+        <Typography
+            sx={{
+                color: '#9B6DFF',
+                fontWeight: 'bold',
+                fontSize: 15,
+                cursor: 'pointer',
+            }}
+        >
+            VER TODOS ⭢
+        </Typography>
+    </Box>
+    <Grid
+        container
+        spacing={2}
+        sx={{
+            width: '100%',
+            margin: 0,
+        }}
+    >
+        {produtos.map((produto) => (
+            <Grid
+                item
+                xs={12}
+                sm={6}
+                md={3}
+                key={produto.nome}
+                sx={{
+                    display: 'flex',
+                    width: '24%',
+                }}
+            >
+                <Card
                     sx={{
-                        minHeight: 400,
-                        border: '1px solid #7C3AED',
-                        borderRadius: 3,
+                        width: '100%',
+                        height: '100%',
+                        minHeight: 500,
+                        backgroundColor: '#0D0D13',
+                        border: '1px solid #292332',
+                        color: '#F5F5F5',
+                        borderRadius: 1.5,
                         overflow: 'hidden',
-                        position: 'relative',
                         display: 'flex',
-                        alignItems: 'center',
-                        mb: 5,
-                        backgroundImage: `linear-gradient(90deg, #08080dfa 0%, rgba(8,8,13,0.82) 0%, rgba(8,8,13,0.25) 0%), url(${hero})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        boxShadow: '0 0 30px #7c3aed33',
-                    }}
-                >
-                    <Box sx={{ p: { xs: 4, md: 7 }, maxWidth: 650 }}>
-                        <Typography
-                            sx={{
-                                color: '#FFD21F',
-                                fontWeight: 'bold',
-                                letterSpacing: 2,
-                                mb: 1,
-                            }}
-                        >
-                            MODA GEEK
-                        </Typography>
-                        <Typography
-                            variant="h1"
-                            sx={{
-                                fontSize: { xs: '2.5rem', md: '4rem' },
-                                fontWeight: 900,
-                                lineHeight: 1,
-                                mb: 2,
-                            }}
-                        >
-                            SEU MUNDO
-                            <br />
-                            <span style={{ color: '#7C3AED' }}>
-                                SEU ESTILO
-                            </span>
-                        </Typography>
-                        <Typography
-                            sx={{
-                                color: '#D1D1D6',
-                                fontSize: '1.1rem',
-                                mb: 3,
-                            }}
-                        >
-                            Roupas e acessórios de todo o universo geek.
-                        </Typography>
-                        <Button
-                            variant="contained"
-                            sx={{
-                                backgroundColor: '#FFD21F',
-                                color: '#08080D',
-                                fontWeight: 'bold',
-                                px: 4,
-                                py: 1.5,
-                                '&:hover': {
-                                    backgroundColor: '#F5C400',
-                                },
-                            }}
-                        >
-                            VER COLEÇÕES ⭢
-                        </Button>
-                    </Box>
-                </Box>
-
-
-                {/* -------------------------------------------------------------------------------------------------------------------------------------- */}
-
-
-                {/* CATEGORIAS */}
-                <Box
-                    sx={{
-                        mb: 6,
-                        display: 'grid',
-                        gridTemplateColumns: {
-                            xs: 'repeat(2, 1fr)',
-                            sm: 'repeat(3, 1fr)',
-                            md: 'repeat(6, 1fr)',
+                        flexDirection: 'column',
+                        position: 'relative',
+                        transition: '0.3s',
+                        '&:hover': {
+                            borderColor: '#7C3AED',
+                            transform: 'translateY(-4px)',
+                            boxShadow: '0 0 20px #7c3aed33',
                         },
-                        gap: 2,
                     }}
                 >
-                    {categorias.map((categoria) => (
+                    {/* IMAGEM = PRODUTOS */}
+                    <Box
+                        sx={{
+                            height: 270,
+                            minHeight: 270,
+                            backgroundColor: '#18151F',
+                            position: 'relative',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            overflow: 'hidden',
+                        }}
+                    >
                         <Box
-                            key={categoria.nome}
                             sx={{
-                                height: 145,
-                                backgroundColor: '#0D0D13',
-                                border: '1px solid #7C3AED',
-                                borderRadius: 1,
-                                position: 'relative',
-                                overflow: 'hidden',
-                                textAlign: 'center',
-                                cursor: 'pointer',
-                                transition: '0.3s',
-
-                                '&::before': {
-                                    content: '""',
+                                width: '100%',
+                                height: '100%',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                color: '#555',
+                                fontSize: 11,
+                            }}
+                        >
+                            <img
+                                src={produto.imagem}
+                                alt={produto.nome}
+                                style={{
+                                    width: '370px',
+                                    height: '270px',
+                                    objectFit: 'cover',
+                                }}
+                            />
+                        </Box>
+                        {produto.destaque && (
+                            <Box
+                                sx={{
                                     position: 'absolute',
                                     top: 0,
                                     left: 0,
-                                    width: 14,
-                                    height: 14,
-                                    borderTop: '3px solid #FFD21F',
-                                    borderLeft: '3px solid #FFD21F',
-                                },
-
-                                '&::after': {
-                                    content: '""',
-                                    position: 'absolute',
-                                    bottom: 0,
-                                    right: 0,
-                                    width: 35,
-                                    height: 35,
-                                    borderBottom: '3px solid #FFD21F',
-                                    borderRight: '3px solid #FFD21F',
-                                },
-
-                                '&:hover': {
-                                    transform: 'translateY(-4px)',
-                                    borderColor: '#9B6DFF',
-                                    boxShadow: '0 0 18px #7c3aed4d',
-                                },
-                            }}
-                        >
-                            {/* IMAGEM = CATEGORIA */}
-                            <Box
-                                sx={{
-                                    height: 80,
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    pt: 1,
+                                    backgroundColor:
+                                        produto.destaque === 'LANÇAMENTO'
+                                            ? '#7C3AED'
+                                            : '#FFD21F',
+                                    color:
+                                        produto.destaque === 'LANÇAMENTO'
+                                            ? '#FFFFFF'
+                                            : '#08080D',
+                                    px: 2,
+                                    py: 0.6,
+                                    borderRadius: 0.4,
+                                    fontSize: 9,
+                                    fontWeight: 900,
+                                    letterSpacing: 0.9,
                                 }}
                             >
-                                <img
-                                    src={categoria.imagem}
-                                    alt={categoria.nome}
-                                    style={{
-                                        maxWidth: '75px',
-                                        maxHeight: '65px',
-                                        objectFit: 'contain',
-                                    }}
-                                />
+                                {produto.destaque}
                             </Box>
-
-                            <Typography
-                                sx={{
-                                    fontSize: 14,
-                                    fontWeight: 'bold',
-                                    color: '#F5F5F5',
-                                    mt: 1,
-                                }}
-                            >
-                                {categoria.nome}
-                            </Typography>
-
-                            <Typography
-                                sx={{
-                                    fontSize: 11,
-                                    color: '#FFD21F',
-                                    mt: 0.7,
-                                }}
-                            >
-                                VER TUDO ⭢
-                            </Typography>
-
-                        </Box>
-                    ))}
-                </Box>
-
-
-                {/* -------------------------------------------------------------------------------------------------------------------------------------- */}
-
-
-                {/* PRODUTOS */}
-                <Box sx={{ mb: 6 }}>
-                    <Box
+                        )}
+                    </Box>
+                    <CardContent
                         sx={{
+                            p: 3,
                             display: 'flex',
-                            justifyContent: 'space-between',
-                            alignItems: 'center',
-                            mb: 3,
-                            position: 'relative',
+                            flexDirection: 'column',
+                            flexGrow: 1,
                         }}
                     >
+                        <Typography
+                            sx={{
+                                fontSize: 20,
+                                fontWeight: 800,
+                                color: '#F5F5F5',
+                                lineHeight: 1.2,
+                                minHeight: 32,
+                            }}
+                        >
+                            {produto.nome}
+                        </Typography>
+                        <Typography
+                            sx={{
+                                color: '#A1A1AA',
+                                fontSize: 15,
+                                mt: 0.3,
+                            }}
+                        >
+                            {produto.tema}
+                        </Typography>
+                        <Typography
+                            sx={{
+                                color: '#F5F5F5',
+                                fontSize: 17,
+                                fontWeight: 900,
+                                mt: 1,
+                            }}
+                        >
+                            {produto.preco}
+                        </Typography>
                         <Box
                             sx={{
                                 display: 'flex',
                                 alignItems: 'center',
-                                gap: 1.5,
+                                gap: 0.8,
+                                mt: 0.7,
+                                mb: 1.5,
                             }}
                         >
                             <Box
                                 sx={{
-                                    width: 20,
-                                    height: 20,
-                                    backgroundColor: '#FFD21F',
-                                    clipPath: 'polygon(0 0, 100% 0, 65% 100%, 0 100%)',
-                                }}
-                            />
-                            <Typography
-                                variant="h5"
-                                sx={{
-                                    fontWeight: 900,
-                                    color: '#F5F5F5',
-                                    letterSpacing: 0.5,
+                                    display: 'flex',
+                                    gap: '2px',
                                 }}
                             >
-                                PRODUTOS EM DESTAQUE
+                                {[1, 2, 3, 4, 5].map((estrela) => (
+                                    <Typography
+                                        key={estrela}
+                                        component="span"
+                                        sx={{
+                                            fontSize: 16,
+                                            color: '#FFD21F',
+                                            lineHeight: 1,
+                                        }}
+                                    >
+                                        ★
+                                    </Typography>
+                                ))}
+                            </Box>
+                            <Typography
+                                sx={{
+                                    color: '#A1A1AA',
+                                    fontSize: 12,
+                                }}
+                            >
+                                {produto.avaliacao.toFixed(1)}
                             </Typography>
                         </Box>
-                        <Typography
+                        <Button
+                            fullWidth
+                            variant="contained"
                             sx={{
-                                color: '#9B6DFF',
-                                fontWeight: 'bold',
-                                fontSize: 15,
-                                cursor: 'pointer',
+                                mt: 'auto',
+                                height: 35,
+                                backgroundColor: '#7C3AED',
+                                color: '#FFFFFF',
+                                fontSize: 12,
+                                fontWeight: 900,
+                                '&:hover': {
+                                    backgroundColor: '#6D28D9',
+                                },
                             }}
                         >
-                            VER TODOS ⭢
-                        </Typography>
-                    </Box>
-                    <Grid
-                        container
-                        spacing={2}
-                        sx={{
-                            width: '100%',
-                            margin: 0,
-                        }}
-                    >
-                        {produtos.map((produto) => (
-                            <Grid
-                                item
-                                xs={12}
-                                sm={6}
-                                md={3}
-                                key={produto.nome}
-                                sx={{
-                                    display: 'flex',
-                                    width: '24%',
-                                }}
-                            >
-                                <Card
-                                    sx={{
-                                        width: '100%',
-                                        height: '100%',
-                                        minHeight: 500,
-                                        backgroundColor: '#0D0D13',
-                                        border: '1px solid #292332',
-                                        color: '#F5F5F5',
-                                        borderRadius: 1.5,
-                                        overflow: 'hidden',
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        position: 'relative',
-                                        transition: '0.3s',
-
-                                        '&:hover': {
-                                            borderColor: '#7C3AED',
-                                            transform: 'translateY(-4px)',
-                                            boxShadow: '0 0 20px #7c3aed33',
-                                        },
-                                    }}
-                                >
-                                    {/* IMAGEM = PRODUTOS */}
-                                    <Box
-                                        sx={{
-                                            height: 270,
-                                            minHeight: 270,
-                                            backgroundColor: '#18151F',
-                                            position: 'relative',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            overflow: 'hidden',
-                                        }}
-                                    >
-                                        <Box
-                                            sx={{
-                                                width: '100%',
-                                                height: '100%',
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                justifyContent: 'center',
-                                                color: '#555',
-                                                fontSize: 11,
-                                            }}
-                                        >
-                                            <img
-                                                src={produto.imagem}
-                                                alt={produto.nome}
-                                                style={{
-                                                    width: '370px',
-                                                    height: '270px',
-                                                    objectFit: 'cover',
-                                                }}
-                                            />
-                                        </Box>
-                                        {produto.destaque && (
-                                            <Box
-                                                sx={{
-                                                    position: 'absolute',
-                                                    top: 0,
-                                                    left: 0,
-                                                    backgroundColor:
-                                                        produto.destaque === 'LANÇAMENTO'
-                                                            ? '#7C3AED'
-                                                            : '#FFD21F',
-                                                    color:
-                                                        produto.destaque === 'LANÇAMENTO'
-                                                            ? '#FFFFFF'
-                                                            : '#08080D',
-                                                    px: 2,
-                                                    py: 0.6,
-                                                    borderRadius: 0.4,
-                                                    fontSize: 9,
-                                                    fontWeight: 900,
-                                                    letterSpacing: 0.9,
-                                                }}
-                                            >
-                                                {produto.destaque}
-                                            </Box>
-                                        )}
-                                    </Box>
-                                    <CardContent
-                                        sx={{
-                                            p: 3,
-                                            display: 'flex',
-                                            flexDirection: 'column',
-                                            flexGrow: 1,
-                                        }}
-                                    >
-                                        <Typography
-                                            sx={{
-                                                fontSize: 20,
-                                                fontWeight: 800,
-                                                color: '#F5F5F5',
-                                                lineHeight: 1.2,
-                                                minHeight: 32,
-                                            }}
-                                        >
-                                            {produto.nome}
-                                        </Typography>
-                                        <Typography
-                                            sx={{
-                                                color: '#A1A1AA',
-                                                fontSize: 15,
-                                                mt: 0.3,
-                                            }}
-                                        >
-                                            {produto.tema}
-                                        </Typography>
-                                        <Typography
-                                            sx={{
-                                                color: '#F5F5F5',
-                                                fontSize: 17,
-                                                fontWeight: 900,
-                                                mt: 1,
-                                            }}
-                                        >
-                                            {produto.preco}
-                                        </Typography>
-                                        <Box
-                                            sx={{
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                gap: 0.8,
-                                                mt: 0.7,
-                                                mb: 1.5,
-                                            }}
-                                        >
-                                            <Box
-                                                sx={{
-                                                    display: 'flex',
-                                                    gap: '2px',
-                                                }}
-                                            >
-                                                {[1, 2, 3, 4, 5].map((estrela) => (
-                                                    <Typography
-                                                        key={estrela}
-                                                        component="span"
-                                                        sx={{
-                                                            fontSize: 16,
-                                                            color: '#FFD21F',
-                                                            lineHeight: 1,
-                                                        }}
-                                                    >
-                                                        ★
-                                                    </Typography>
-                                                ))}
-                                            </Box>
-                                            <Typography
-                                                sx={{
-                                                    color: '#A1A1AA',
-                                                    fontSize: 12,
-                                                }}
-                                            >
-                                                {produto.avaliacao.toFixed(1)}
-                                            </Typography>
-                                        </Box>
-                                        <Button
-                                            fullWidth
-                                            variant="contained"
-                                            sx={{
-                                                mt: 'auto',
-                                                height: 35,
-                                                backgroundColor: '#7C3AED',
-                                                color: '#FFFFFF',
-                                                fontSize: 12,
-                                                fontWeight: 900,
-                                                '&:hover': {
-                                                    backgroundColor: '#6D28D9',
-                                                },
-                                            }}
-                                        >
-                                            ADICIONAR AO CARRINHO
-                                        </Button>
-                                    </CardContent>
-                                </Card>
-                            </Grid>
-                        ))}
-                    </Grid>
-                </Box>
+                            ADICIONAR AO CARRINHO
+                        </Button>
+                    </CardContent>
+                </Card>
+            </Grid>
+        ))}
+    </Grid>
+</Box>
 
 
-                {/* -------------------------------------------------------------------------------------------------------------------------------------- */}
+{/* -------------------------------------------------------------------------------------------------------------------------------------- */}
 
 
                 {/* RODAPE */}
