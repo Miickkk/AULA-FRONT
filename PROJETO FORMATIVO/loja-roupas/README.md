@@ -58,3 +58,7 @@
   -Cliente (processo)
   -ADM
   
+<<<<<<< HEAD
+=======
+
+>>>>>>> c5ac6b612091da4c5d374f86dffec1010fb64b2d

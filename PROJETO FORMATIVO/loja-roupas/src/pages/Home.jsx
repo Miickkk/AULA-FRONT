@@ -346,6 +346,7 @@ return (
                         borderRadius: 1.5,
                         overflow: 'hidden',
                         display: 'flex',
+<<<<<<< HEAD
                         flexDirection: 'column',
                         position: 'relative',
                         transition: '0.3s',
@@ -353,6 +354,82 @@ return (
                             borderColor: '#7C3AED',
                             transform: 'translateY(-4px)',
                             boxShadow: '0 0 20px #7c3aed33',
+=======
+                        alignItems: 'center',
+                        mb: 5,
+                        backgroundImage: `linear-gradient(90deg, #08080dfa 0%, rgba(8,8,13,0.82) 0%, rgba(8,8,13,0.25) 0%), url(${hero})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        boxShadow: '0 0 30px #7c3aed33',
+                    }}
+                >
+                    <Box sx={{ p: { xs: 4, md: 7 }, maxWidth: 650 }}>
+                        <Typography
+                            sx={{
+                                color: '#FFD21F',
+                                fontWeight: 'bold',
+                                letterSpacing: 2,
+                                mb: 1,
+                            }}
+                        >
+                            MODA GEEK
+                        </Typography>
+                        <Typography
+                            variant="h1"
+                            sx={{
+                                fontSize: { xs: '2.5rem', md: '4rem' },
+                                fontWeight: 900,
+                                lineHeight: 1,
+                                mb: 2,
+                            }}
+                        >
+                            SEU MUNDO
+                            <br />
+                            <span style={{ color: '#7C3AED' }}>
+                                SEU ESTILO
+                            </span>
+                        </Typography>
+                        <Typography
+                            sx={{
+                                color: '#D1D1D6',
+                                fontSize: '1.1rem',
+                                mb: 3,
+                            }}
+                        >
+                            Roupas e acessórios de todo o universo geek.
+                        </Typography>
+                        <Button
+                            variant="contained"
+                            sx={{
+                                backgroundColor: '#FFD21F',
+                                color: '#08080D',
+                                fontWeight: 'bold',
+                                px: 4,
+                                py: 1.5,
+                                '&:hover': {
+                                    backgroundColor: '#F5C400',
+                                },
+                            }}
+                        >
+                            PROMOÇÕES ⭢
+                        </Button>
+                    </Box>
+                </Box>
+
+
+                {/* -------------------------------------------------------------------------------------------------------------------------------------- */}
+
+
+                {/* CATEGORIAS */}
+                <Box
+                    sx={{
+                        mb: 6,
+                        display: 'grid',
+                        gridTemplateColumns: {
+                            xs: 'repeat(2, 1fr)',
+                            sm: 'repeat(3, 1fr)',
+                            md: 'repeat(6, 1fr)',
+>>>>>>> c5ac6b612091da4c5d374f86dffec1010fb64b2d
                         },
                     }}
                 >
