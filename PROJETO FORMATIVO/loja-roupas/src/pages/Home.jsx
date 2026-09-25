@@ -1,12 +1,14 @@
+{/* ==================== IMPORTES ==================== */}
+
 import { Container, Typography, Box, Button, Grid, Card, CardContent } from '@mui/material';
 import hero from '../assets/banner.jpg';
 import gamer from '../assets/icons/gamer.png';
 import seguro from '../assets/icons/seguro.png';
 import coracao from '../assets/icons/coracao.png';
-import camisetaAttack from '../assets/camisa-atack-on-titan.jpg';
-import moletomGojo from '../assets/gojo-moletom.webp';
-import jaquetaAkatsuki from '../assets/akatsuki-jaqueta.jpg';
-import boneLuffy from '../assets/bone-luffy.jpg';
+import camisetaAttack from '../assets/camisas/camisa-atack-on-titan.jpg';
+import moletomGojo from '../assets/moletom/gojo-moletom.webp';
+import jaquetaAkatsuki from '../assets/jaquetas/akatsuki-jaqueta.jpg';
+import boneLuffy from '../assets/acessorios/bone-luffy.jpg';
 import camisetas from '../assets/icons/1.png';
 import moletons from '../assets/icons/2.png';
 import jaquetas from '../assets/icons/3.png';
@@ -16,8 +18,9 @@ import acessorios from '../assets/icons/6.png';
 import naruto from '../assets/naruto.png';
 
 
-{/* -------------------------------------------------------------------------------------------------------------------------------------- */ }
 
+
+{/* ==================== DADOS ==================== */}
 
 function Home() {
     const categorias = [
@@ -81,8 +84,9 @@ function Home() {
     ];
 
 
-{/* -------------------------------------------------------------------------------------------------------------------------------------- */ }
 
+
+{/* ==================== BANNER ==================== */}
 
 return (
     <Box
@@ -164,10 +168,10 @@ return (
             </Box>
 
 
-{/* -------------------------------------------------------------------------------------------------------------------------------------- */}
 
 
-{/* CATEGORIAS */}
+{/* ==================== CATEGORIAS ==================== */}
+
 <Box
     sx={{
         mb: 6,
@@ -264,10 +268,10 @@ return (
 </Box>
 
 
-{/* -------------------------------------------------------------------------------------------------------------------------------------- */}
 
 
-{/* PRODUTOS */}
+{/* ==================== PRODUTOS ==================== */}
+
 <Box sx={{ mb: 6 }}>
     <Box
         sx={{
@@ -304,6 +308,7 @@ return (
                 PRODUTOS EM DESTAQUE
             </Typography>
         </Box>
+
         <Typography
             sx={{
                 color: '#9B6DFF',
@@ -315,24 +320,26 @@ return (
             VER TODOS ⭢
         </Typography>
     </Box>
+
     <Grid
         container
         spacing={2}
         sx={{
             width: '100%',
             margin: 0,
+            flexWrap: 'nowrap'
         }}
     >
         {produtos.map((produto) => (
             <Grid
                 item
-                xs={12}
-                sm={6}
+                xs={3}
+                sm={3}
                 md={3}
                 key={produto.nome}
                 sx={{
                     display: 'flex',
-                    width: '24%',
+                    flex: '0 0 25%'
                 }}
             >
                 <Card
@@ -346,7 +353,6 @@ return (
                         borderRadius: 1.5,
                         overflow: 'hidden',
                         display: 'flex',
-<<<<<<< HEAD
                         flexDirection: 'column',
                         position: 'relative',
                         transition: '0.3s',
@@ -354,82 +360,6 @@ return (
                             borderColor: '#7C3AED',
                             transform: 'translateY(-4px)',
                             boxShadow: '0 0 20px #7c3aed33',
-=======
-                        alignItems: 'center',
-                        mb: 5,
-                        backgroundImage: `linear-gradient(90deg, #08080dfa 0%, rgba(8,8,13,0.82) 0%, rgba(8,8,13,0.25) 0%), url(${hero})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        boxShadow: '0 0 30px #7c3aed33',
-                    }}
-                >
-                    <Box sx={{ p: { xs: 4, md: 7 }, maxWidth: 650 }}>
-                        <Typography
-                            sx={{
-                                color: '#FFD21F',
-                                fontWeight: 'bold',
-                                letterSpacing: 2,
-                                mb: 1,
-                            }}
-                        >
-                            MODA GEEK
-                        </Typography>
-                        <Typography
-                            variant="h1"
-                            sx={{
-                                fontSize: { xs: '2.5rem', md: '4rem' },
-                                fontWeight: 900,
-                                lineHeight: 1,
-                                mb: 2,
-                            }}
-                        >
-                            SEU MUNDO
-                            <br />
-                            <span style={{ color: '#7C3AED' }}>
-                                SEU ESTILO
-                            </span>
-                        </Typography>
-                        <Typography
-                            sx={{
-                                color: '#D1D1D6',
-                                fontSize: '1.1rem',
-                                mb: 3,
-                            }}
-                        >
-                            Roupas e acessórios de todo o universo geek.
-                        </Typography>
-                        <Button
-                            variant="contained"
-                            sx={{
-                                backgroundColor: '#FFD21F',
-                                color: '#08080D',
-                                fontWeight: 'bold',
-                                px: 4,
-                                py: 1.5,
-                                '&:hover': {
-                                    backgroundColor: '#F5C400',
-                                },
-                            }}
-                        >
-                            PROMOÇÕES ⭢
-                        </Button>
-                    </Box>
-                </Box>
-
-
-                {/* -------------------------------------------------------------------------------------------------------------------------------------- */}
-
-
-                {/* CATEGORIAS */}
-                <Box
-                    sx={{
-                        mb: 6,
-                        display: 'grid',
-                        gridTemplateColumns: {
-                            xs: 'repeat(2, 1fr)',
-                            sm: 'repeat(3, 1fr)',
-                            md: 'repeat(6, 1fr)',
->>>>>>> c5ac6b612091da4c5d374f86dffec1010fb64b2d
                         },
                     }}
                 >
@@ -467,6 +397,7 @@ return (
                                 }}
                             />
                         </Box>
+
                         {produto.destaque && (
                             <Box
                                 sx={{
@@ -493,6 +424,7 @@ return (
                             </Box>
                         )}
                     </Box>
+
                     <CardContent
                         sx={{
                             p: 3,
@@ -512,6 +444,7 @@ return (
                         >
                             {produto.nome}
                         </Typography>
+
                         <Typography
                             sx={{
                                 color: '#A1A1AA',
@@ -521,6 +454,7 @@ return (
                         >
                             {produto.tema}
                         </Typography>
+
                         <Typography
                             sx={{
                                 color: '#F5F5F5',
@@ -531,6 +465,7 @@ return (
                         >
                             {produto.preco}
                         </Typography>
+
                         <Box
                             sx={{
                                 display: 'flex',
@@ -560,6 +495,7 @@ return (
                                     </Typography>
                                 ))}
                             </Box>
+
                             <Typography
                                 sx={{
                                     color: '#A1A1AA',
@@ -569,6 +505,7 @@ return (
                                 {produto.avaliacao.toFixed(1)}
                             </Typography>
                         </Box>
+
                         <Button
                             fullWidth
                             variant="contained"
@@ -594,10 +531,10 @@ return (
 </Box>
 
 
-{/* -------------------------------------------------------------------------------------------------------------------------------------- */}
 
 
-                {/* RODAPE */}
+{/* ==================== RODAPE ==================== */}
+
                 <Box
                     sx={{
                         borderTop: '1px solid #292332',
