@@ -1,24 +1,57 @@
 import { useState } from 'react'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
 import Home from './pages/Home'
 import Login from './pages/Login'
-import Header from './components/Header';
+import Header from './components/Header'
 
 function App() {
-  const [usuario, setUsuario] = useState(null)
+
+  const [usuario, setUsuario] = useState(() => {
+    const usuarioSalvo = localStorage.getItem('usuario')
+    return usuarioSalvo ? JSON.parse(usuarioSalvo) : null
+  })
+
+  const fazerLogin = (usuarioLogado) => {
+    setUsuario(usuarioLogado)
+
+    localStorage.setItem(
+      'usuario',
+      JSON.stringify(usuarioLogado)
+    )
+  }
+
+  const fazerLogout = () => {
+    setUsuario(null)
+    localStorage.removeItem('usuario')
+  }
 
   return (
     <BrowserRouter>
-      {usuario && <Header usuario={usuario} onSair={() => setUsuario(null)} />}
 
       <Routes>
-        <Route path="/login" element={<Login onLogin={setUsuario} />} />
 
         <Route
           path="/"
-          element={usuario ? <Home /> : <Navigate to="/login" replace />}
+          element={
+            <>
+              <Header
+                usuario={usuario}
+                onLogout={fazerLogout}
+              />
+
+              <Home />
+            </>
+          }
         />
+
+        <Route
+          path="/login"
+          element={<Login onLogin={fazerLogin} />}
+        />
+
       </Routes>
+
     </BrowserRouter>
   )
 }

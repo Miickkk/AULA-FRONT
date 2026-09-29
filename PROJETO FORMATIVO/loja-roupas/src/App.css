@@ -5,9 +5,9 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 80px;
-
   border-bottom: 1px solid #7C3AED;
   box-shadow: 0 4px 15px rgba(124, 58, 237, 0.35);
+  position: relative;
 }
 
 .header-logo img {
@@ -19,7 +19,6 @@
   font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
-
   border-left: 1px solid #292332;
   padding-left: 25px;
   min-height: 50px;
@@ -33,7 +32,8 @@
   display: flex;
   align-items: center;
   border: 1px solid transparent;
-  background: linear-gradient(#08080D, #08080D) padding-box,
+  background:
+    linear-gradient(#08080D, #08080D) padding-box,
     linear-gradient(90deg, #7C3AED, #FFD21F) border-box;
   border-radius: 30px;
   padding: 0 15px;
@@ -59,6 +59,96 @@
 
 .header-icons {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 12px;
   color: #F5F5F7;
+}
+
+.header-user {
+  min-width: 42px;
+  height: 42px;
+  padding: 0 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 1px solid #ffffff14;
+  border-radius: 12px;
+  background: #ffffff06;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.header-user:hover {
+  transform: translateY(-2px);
+  background: rgba(124, 58, 237, 0.12);
+  border-color: rgba(124, 58, 237, 0.55);
+  box-shadow: 0 5px 18px rgba(124, 58, 237, 0.18);
+}
+
+.header-user svg {
+  flex-shrink: 0;
+}
+
+.user-email {
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #F5F5F7;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.logout-button {
+  border: none;
+  border-left: 1px solid #ffffff1f;
+  background: transparent;
+  color: #aaa7b2;
+  padding-left: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.logout-button:hover {
+  color: #FFD21F;
+}
+
+/* Carrinho */
+.header-icons > svg {
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  border: 1px solid #ffffff14;
+  border-radius: 12px;
+  background: #ffffff06;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.header-icons > svg:hover {
+  transform: translateY(-2px);
+  background: rgba(124, 58, 237, 0.12);
+  border-color: rgba(124, 58, 237, 0.55);
+  color: #FFD21F;
+}
+
+/* Detalhe roxo/amarelo */
+.header::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #7c3aedb3,
+    #ffd21fb3,
+    #7c3aedb3,
+    transparent
+  );
 }
