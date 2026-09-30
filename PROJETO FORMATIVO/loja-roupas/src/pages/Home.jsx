@@ -1,6 +1,7 @@
 {/* ==================== IMPORTES ==================== */}
 
 import { Container, Typography, Box, Button, Grid, Card, CardContent } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import hero from '../assets/banner.jpg';
 import gamer from '../assets/icons/gamer.png';
 import seguro from '../assets/icons/seguro.png';
@@ -22,7 +23,9 @@ import naruto from '../assets/naruto.png';
 
 {/* ==================== DADOS ==================== */}
 
-function Home() {
+function Home({ usuario, adicionarAoCarrinho }) {
+ const navigate = useNavigate();
+
     const categorias = [
         {
             nome: 'CAMISETAS',
@@ -509,6 +512,17 @@ return (
                         <Button
                             fullWidth
                             variant="contained"
+                            onClick={() => {
+                            
+                                if (!usuario) {
+                                    navigate('/login');
+                                    return;
+                                }
+                            
+                                adicionarAoCarrinho(produto);
+                                navigate('/carrinho');
+                            
+                            }}
                             sx={{
                                 mt: 'auto',
                                 height: 35,

@@ -179,7 +179,7 @@ function Login({ onLogin }) {
 
           <TextField
             fullWidth
-            label="E-mail ou usuário"
+            label="E-mail"
             type="email"
             autoFocus
             value={email}

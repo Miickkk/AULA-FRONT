@@ -6,7 +6,7 @@
   justify-content: space-between;
   padding: 0 80px;
   border-bottom: 1px solid #7C3AED;
-  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.35);
+  box-shadow: 0 4px 15px #7c3aed59;
   position: relative;
 }
 
@@ -65,8 +65,8 @@
 }
 
 .header-user {
-  min-width: 42px;
-  height: 42px;
+  min-width: 40px;
+  height: 40px;
   padding: 0 11px;
   display: flex;
   align-items: center;
@@ -81,9 +81,9 @@
 
 .header-user:hover {
   transform: translateY(-2px);
-  background: rgba(124, 58, 237, 0.12);
-  border-color: rgba(124, 58, 237, 0.55);
-  box-shadow: 0 5px 18px rgba(124, 58, 237, 0.18);
+  background: #7c3aed1f;
+  border-color: #7c3aed8c;
+  box-shadow: 0 5px 18px #7c3aed2e;
 }
 
 .header-user svg {
@@ -116,26 +116,38 @@
   color: #FFD21F;
 }
 
-/* Carrinho */
-.header-icons > svg {
-  width: 20px;
-  height: 20px;
-  padding: 10px;
+.cart-button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid #ffffff14;
   border-radius: 12px;
   background: #ffffff06;
+  color: #F5F5F7;
   cursor: pointer;
   transition: 0.2s ease;
 }
 
-.header-icons > svg:hover {
+.cart-button svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+  color: #F5F5F7;
+  fill: currentColor;
+}
+
+.cart-button:hover {
   transform: translateY(-2px);
-  background: rgba(124, 58, 237, 0.12);
-  border-color: rgba(124, 58, 237, 0.55);
+  background: #7c3aed1f;
+  border-color: #7c3aed8c;
+}
+
+.cart-button:hover svg {
   color: #FFD21F;
 }
 
-/* Detalhe roxo/amarelo */
 .header::after {
   content: "";
   position: absolute;
@@ -143,12 +155,28 @@
   left: 10%;
   right: 10%;
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    #7c3aedb3,
-    #ffd21fb3,
-    #7c3aedb3,
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      #7c3aedb3,
+      #ffd21fb3,
+      #7c3aedb3,
+      transparent);
+}
+
+.back-button {
+  border: 1px solid #ffffff14;
+  border-radius: 10px;
+  background: #ffffff06;
+  color: #9B6DFF;
+  padding: 9px 13px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.back-button:hover {
+  background: #7c3aed1f;
+  border-color: #7c3aed8c;
+  color: #FFD21F;
 }

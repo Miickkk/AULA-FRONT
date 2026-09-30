@@ -7,7 +7,6 @@ import logo from '../assets/icons/logo.png';
 import '../App.css';
 
 function Header({ usuario, onLogout }) {
-
   const navigate = useNavigate();
 
   return (
@@ -31,8 +30,17 @@ function Header({ usuario, onLogout }) {
         <SearchIcon />
       </div>
 
-      <div className="header-icons">
+      {window.location.pathname === '/carrinho' && (
+        <button
+          className="back-button"
+          onClick={() => navigate('/')}
+        >
+          ← Voltar
+        </button>
+      )}
 
+
+      <div className="header-icons">
         <div className="header-user">
 
           <PersonIcon
@@ -61,8 +69,19 @@ function Header({ usuario, onLogout }) {
 
         </div>
 
-        <ShoppingCartIcon />
+        <div
+          className="cart-button"
+          onClick={() => {
+            if (!usuario) {
+              navigate('/login');
+              return;
+            }
 
+            navigate('/carrinho');
+          }}
+        >
+          <ShoppingCartIcon />
+        </div>
       </div>
 
     </header>
