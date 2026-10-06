@@ -42,20 +42,20 @@
   - Home
   - Cores definidas
   - Logo
+  - faze longin
+  - pagina pra cada catalogo
+  - adicionar ao carrinho
+  - checkout do carrinho
+  - BANCO MOCK
 
 ## **O QUE NAO TEMOS ATE AGR** ##
 
 **ROTAS**
   - inicio
   - conta criar
-  - faze longin
   - botao de promocao = pagina de produtos em promocao
-  - pagina pra cada catalogo
   - ver todos = pagina de todos dos catalogos
   - pagina para cada produto (mockpost)
-  - adicionar ao carrinho
-
-**BANCO MOCK**
 
 **USUARIOS** 
   -Cliente (processo)
