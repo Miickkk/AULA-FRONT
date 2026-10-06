@@ -12,7 +12,7 @@ import mastercard from '../assets/icons/mastercard.png';
 import elo from '../assets/icons/elo.png';
 import pix from '../assets/icons/pix.png';
 import bannerCarrinho from '../assets/banner3.png';
-
+import Checkout from "../pages/Checkout";
 
 
 
@@ -607,8 +607,7 @@ function Carrinho({
                                     }}
                                 />
                             }
-                            onClick={finalizarCompra}
-                            sx={{
+                                onClick={() => navigate('/checkout')}                            sx={{
                                 position: 'relative',
                                 zIndex: 1,
                             

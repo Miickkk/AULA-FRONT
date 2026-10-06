@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Carrinho from './pages/Carrinho'
 import Header from './components/Header'
+import Checkout from './pages/Checkout'
 
 
 
@@ -25,7 +26,7 @@ function App() {
 
 
 
-// ==================== CARRINHO ====================
+  // ==================== CARRINHO ====================
 
   const [carrinho, setCarrinho] = useState(() => {
     const usuarioSalvo = localStorage.getItem('usuario')
@@ -57,14 +58,14 @@ function App() {
 
   }, [carrinho, usuario])
 
-const finalizarCompra = () => {
-  setCarrinho([])
-}
+  const finalizarCompra = () => {
+    setCarrinho([])
+  }
 
 
 
 
-// ==================== LOGIN ====================
+  // ==================== LOGIN ====================
 
   const fazerLogin = (usuarioLogado) => {
     setUsuario(usuarioLogado)
@@ -89,7 +90,7 @@ const finalizarCompra = () => {
 
 
 
-// ==================== LOGOUT ====================
+  // ==================== LOGOUT ====================
 
   const fazerLogout = () => {
     setUsuario(null)
@@ -101,7 +102,7 @@ const finalizarCompra = () => {
 
 
 
-// ==================== ADICIONAR AO CARRINHO ====================
+  // ==================== ADICIONAR AO CARRINHO ====================
 
   const adicionarAoCarrinho = (produto) => {
     setCarrinho((carrinhoAtual) => {
@@ -114,9 +115,9 @@ const finalizarCompra = () => {
         return carrinhoAtual.map((item) =>
           item.nome === produto.nome
             ? {
-                ...item,
-                quantidade: item.quantidade + 1
-              }
+              ...item,
+              quantidade: item.quantidade + 1
+            }
             : item
         )
 
@@ -145,9 +146,9 @@ const finalizarCompra = () => {
       carrinhoAtual.map((item) =>
         item.nome === nome
           ? {
-              ...item,
-              quantidade: item.quantidade + 1
-            }
+            ...item,
+            quantidade: item.quantidade + 1
+          }
           : item
 
       )
@@ -159,7 +160,7 @@ const finalizarCompra = () => {
 
 
 
-// ==================== - QUANTIDADE ====================
+  // ==================== - QUANTIDADE ====================
 
   const diminuirQuantidade = (nome) => {
     setCarrinho((carrinhoAtual) =>
@@ -168,9 +169,9 @@ const finalizarCompra = () => {
         .map((item) =>
           item.nome === nome
             ? {
-                ...item,
-                quantidade: item.quantidade - 1
-              }
+              ...item,
+              quantidade: item.quantidade - 1
+            }
             : item
 
         )
@@ -186,7 +187,7 @@ const finalizarCompra = () => {
 
 
 
-// ==================== ROTAS ====================
+  // ==================== ROTAS ====================
 
   return (
 
@@ -234,6 +235,24 @@ const finalizarCompra = () => {
                 aumentarQuantidade={aumentarQuantidade}
                 diminuirQuantidade={diminuirQuantidade}
                 finalizarCompra={finalizarCompra}
+              />
+            </>
+          }
+        />
+
+        <Route
+          path="/Checkout"
+          element={
+            <>
+
+              <Header
+                usuario={usuario}
+                onLogout={fazerLogout}
+              />
+
+              <Checkout
+                usuario={usuario}
+                carrinho={carrinho}
               />
             </>
           }
