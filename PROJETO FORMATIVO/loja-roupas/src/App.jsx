@@ -7,6 +7,7 @@ import Login from './pages/Login'
 import Carrinho from './pages/Carrinho'
 import Header from './components/Header'
 import Checkout from './pages/Checkout'
+import Produtos from './pages/Produtos'
 
 
 
@@ -61,6 +62,10 @@ function App() {
   const finalizarCompra = () => {
     setCarrinho([])
   }
+
+  const limparCarrinho = () => {
+    setCarrinho([]);
+  };
 
 
 
@@ -253,6 +258,24 @@ function App() {
               <Checkout
                 usuario={usuario}
                 carrinho={carrinho}
+                limparCarrinho={limparCarrinho}
+              />
+            </>
+          }
+        />
+
+        <Route
+          path="/produtos"
+          element={
+            <>
+              <Header
+                usuario={usuario}
+                onLogout={fazerLogout}
+              />
+
+              <Produtos
+                usuario={usuario}
+                adicionarAoCarrinho={adicionarAoCarrinho}
               />
             </>
           }

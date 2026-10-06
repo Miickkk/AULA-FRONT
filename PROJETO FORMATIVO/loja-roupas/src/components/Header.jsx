@@ -1,10 +1,15 @@
+{/* ==================== IMPORTES ==================== */}
+
 import SearchIcon from '@mui/icons-material/Search';
 import PersonIcon from '@mui/icons-material/Person';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useNavigate } from 'react-router-dom';
-
 import logo from '../assets/icons/logo.png';
 import '../App.css';
+
+
+
+{/* ==================== CABEÇALHO ==================== */}
 
 function Header({ usuario, onLogout }) {
   const navigate = useNavigate();
@@ -30,15 +35,25 @@ function Header({ usuario, onLogout }) {
         <SearchIcon />
       </div>
 
-      {window.location.pathname === '/carrinho' && (
-        <button
-          className="back-button"
-          onClick={() => navigate('/')}
-        >
-          ← Voltar
-        </button>
+
+
+
+{/* ==================== BOTAO DE VOLTAR ==================== */}
+
+    {(window.location.pathname === '/carrinho' ||
+      window.location.pathname === '/produtos') && (
+      <button
+        className="back-button"
+        onClick={() => navigate('/')}
+      >
+         🢠 Voltar
+      </button>
       )}
 
+
+
+
+{/* ==================== ICONES ==================== */}
 
       <div className="header-icons">
         <div className="header-user">
@@ -68,6 +83,11 @@ function Header({ usuario, onLogout }) {
           )}
 
         </div>
+
+
+
+
+{/* ==================== CARRINHO ==================== */}
 
         <div
           className="cart-button"

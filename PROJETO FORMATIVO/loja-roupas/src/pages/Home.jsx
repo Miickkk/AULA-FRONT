@@ -21,30 +21,30 @@ import naruto from '../assets/naruto.png';
 
 
 
-{/* ==================== DADOS ==================== */}
+{/* ==================== COMPONENTES ==================== */}
 
 function Home({ usuario, adicionarAoCarrinho }) {
  const navigate = useNavigate();
 
     const categorias = [
         {
-            nome: 'CAMISETAS',
+            nome: 'Camisetas',
             imagem: camisetas
         },
         {
-            nome: 'MOLETONS',
+            nome: 'Moletons',
             imagem: moletons
         },
         {
-            nome: 'JAQUETAS',
+            nome: 'Jaquetas',
             imagem: jaquetas
         },
         {
-            nome: 'CALÇAS',
+            nome: 'Calças',
             imagem: calcas
         },
         {
-            nome: 'BONÉS',
+            nome: 'Bonés',
             imagem: bones
         },
         {
@@ -111,64 +111,64 @@ return (
                     display: 'flex',
                     alignItems: 'center',
                     mb: 5,
-                    backgroundImage: `linear-gradient(90deg, #08080dfa 0%, rgba(8,8,13,0.82) 0%, rgba(8,8,13,0.25) 0%), url(${hero})`,
+                    backgroundImage: `linear-gradient(90deg, #08080dfa 0%, #08080dd1 0%, #08080d40 0%), url(${hero})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     boxShadow: '0 0 30px #7c3aed33',
                 }}
             >
-                <Box sx={{ p: { xs: 4, md: 7 }, maxWidth: 650 }}>
-                    <Typography
-                        sx={{
-                            color: '#FFD21F',
-                            fontWeight: 'bold',
-                            letterSpacing: 2,
-                            mb: 1,
-                        }}
-                    >
-                        MODA GEEK
-                    </Typography>
-                    <Typography
-                        variant="h1"
-                        sx={{
-                            fontSize: { xs: '2.5rem', md: '4rem' },
-                            fontWeight: 900,
-                            lineHeight: 1,
-                            mb: 2,
-                        }}
-                    >
-                        SEU MUNDO
-                        <br />
-                        <span style={{ color: '#7C3AED' }}>
-                            SEU ESTILO
-                        </span>
-                    </Typography>
-                    <Typography
-                        sx={{
-                            color: '#D1D1D6',
-                            fontSize: '1.1rem',
-                            mb: 3,
-                        }}
-                    >
-                        Roupas e acessórios de todo o universo geek.
-                    </Typography>
-                    <Button
-                        variant="contained"
-                        sx={{
-                            backgroundColor: '#FFD21F',
-                            color: '#08080D',
-                            fontWeight: 'bold',
-                            px: 4,
-                            py: 1.5,
-                            '&:hover': {
-                                backgroundColor: '#F5C400',
-                            },
-                        }}
-                    >
-                        VER COLEÇÕES ⭢
-                    </Button>
-                </Box>
+            <Box sx={{ p: { xs: 4, md: 7 }, maxWidth: 650 }}>
+                <Typography
+                    sx={{
+                        color: '#FFD21F',
+                        fontWeight: 'bold',
+                        letterSpacing: 2,
+                        mb: 1,
+                    }}
+                >
+                    MODA GEEK
+                </Typography>
+                <Typography
+                    variant="h1"
+                    sx={{
+                        fontSize: { xs: '2.5rem', md: '4rem' },
+                        fontWeight: 900,
+                        lineHeight: 1,
+                        mb: 2,
+                    }}
+                >
+                    SEU MUNDO
+                    <br />
+                    <span style={{ color: '#7C3AED' }}>
+                        SEU ESTILO
+                    </span>
+                </Typography>
+                <Typography
+                    sx={{
+                        color: '#D1D1D6',
+                        fontSize: '1.1rem',
+                        mb: 3,
+                    }}
+                >
+                    Roupas e acessórios de todo o universo geek.
+                </Typography>
+                <Button
+                    variant="contained"
+                    sx={{
+                        backgroundColor: '#FFD21F',
+                        color: '#08080D',
+                        fontWeight: 'bold',
+                        px: 4,
+                        py: 1.5,
+                        '&:hover': {
+                            backgroundColor: '#F5C400',
+                        },
+                    }}
+                >
+                    VER PROMOÇÕES 🢡
+                </Button>
             </Box>
+        </Box>
 
 
 
@@ -190,8 +190,11 @@ return (
     {categorias.map((categoria) => (
         <Box
             key={categoria.nome}
+            onClick={() => navigate(
+                `/produtos?categoria=${encodeURIComponent(categoria.nome)}`
+            )}
             sx={{
-                height: 145,
+                height: 130,
                 backgroundColor: '#0D0D13',
                 border: '1px solid #7C3AED',
                 borderRadius: 1,
@@ -257,15 +260,6 @@ return (
             >
                 {categoria.nome}
             </Typography>
-            <Typography
-                sx={{
-                    fontSize: 11,
-                    color: '#FFD21F',
-                    mt: 0.7,
-                }}
-            >
-                VER TUDO ⭢
-            </Typography>
         </Box>
     ))}
 </Box>
@@ -313,6 +307,7 @@ return (
         </Box>
 
         <Typography
+            onClick={() => navigate('/produtos')}
             sx={{
                 color: '#9B6DFF',
                 fontWeight: 'bold',
@@ -320,7 +315,7 @@ return (
                 cursor: 'pointer',
             }}
         >
-            VER TODOS ⭢
+            VER TODOS 🢡
         </Typography>
     </Box>
 

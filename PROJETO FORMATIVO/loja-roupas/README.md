@@ -2,31 +2,34 @@
 
 ## **Loja Virtual de Moda Geek** ##
 
-- Anime
+- Anime 
+  - 2 roupas
+  - 2 acessorio
 
 - Mangá
+  - 1 roupa
+  - 1 acessorio
 
 - Games
-
-- RPG
+  - 1 roupa
+  - 1 acessorio
 
 - Quadrinhos
-
-
+  - 1 roupa
+  - 1 acessorio
+  
   **Roupas**
-    - Camisetas
-    - Camisetas oversized
-    - Moletons
-    - Jaquetas
-    - Calças
+    - Camisetas 5
+    - Moletons 5
+    - Jaquetas 5
+    - Calças 5
 
   **Acessórios**
-    - Bonés
-    - Mochilas
-    - Chaveiros
-    - Colares
-
-  **Cores**
+    - Bonés 5
+    - Chaveiros 5
+    - Colares 5
+ 
+  **Cores Principais**
     -preto: #08080D;
     -preto-card: #111116;
     -branco: #F5F5F7;

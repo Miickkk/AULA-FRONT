@@ -1,3 +1,5 @@
+{/* ==================== USUARIOS ==================== */}
+
 export const mockUsuarios = [
     {
         id: 1,
@@ -8,7 +10,7 @@ export const mockUsuarios = [
     {
         id: 2,
         nome: "Tuti",
-        email: "tuti.limao@gmail.com",
+        email: "tuti.lima@gmail.com",
         senha: "tutiamor"
     }
 ]

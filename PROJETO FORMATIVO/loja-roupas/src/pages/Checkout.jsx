@@ -17,13 +17,17 @@ import iconeSeguro from '../assets/icons/seguro2.png';
 import bannerCarrinho from '../assets/banner3.png';
 
 
-{/* ==================== COMPONENTE ==================== */}
+
+
+{/* ==================== COMPONENTES ==================== */}
 
 function FinalizarCompra({
     usuario,
-    carrinho
+    carrinho,
+    limparCarrinho
 }) {
 
+    const [pedidoConfirmado, setPedidoConfirmado] = useState(false);
     const navigate = useNavigate();
 
     const [endereco, setEndereco] = useState({
@@ -84,8 +88,8 @@ function FinalizarCompra({
 
                 backgroundImage: `
                     linear-gradient(
-                        rgba(8, 8, 13, 0.35),
-                        rgba(8, 8, 13, 0.35)
+                        #08080d59,
+                        #08080d59
                     ),
                     url(${bannerCarrinho})
                 `,
@@ -104,78 +108,78 @@ function FinalizarCompra({
 
 {/* ==================== VOLTAR ==================== */}
 
-                <Button
-                    onClick={() => navigate('/carrinho')}
-                    sx={{
-                        color: '#7C3AED',
-                        fontSize: 12,
-                        fontWeight: 700,
-                        minWidth: 'auto',
-                        padding: 0,
-                        mb: 3,
-
-                        '&:hover': {
-                            backgroundColor: 'transparent',
-                            color: '#FFD21F'
-                        }
-                    }}
-                >
-                    ← Voltar para o carrinho
-                </Button>
+        <Button
+            onClick={() => navigate('/carrinho')}
+            sx={{
+                color: '#7C3AED',
+                fontSize: 12,
+                fontWeight: 700,
+                minWidth: 'auto',
+                padding: 0,
+                mb: 3,
+            
+                '&:hover': {
+                    backgroundColor: 'transparent',
+                    color: '#FFD21F'
+                }
+            }}
+        >
+            🢠 Voltar para o carrinho
+        </Button>
 
 
 
 
 {/* ==================== TÍTULO ==================== */}
 
+        <Box
+            sx={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 1.5,
+                mb: 4
+            }}
+        >
+            <ShoppingCartIcon
+                sx={{
+                    color: '#7C3AED',
+                    fontSize: 60
+                }}
+            />
             <Box
                 sx={{
                     display: 'flex',
-                    alignItems: 'center',
-                    gap: 1.5,
-                    mb: 4
+                    flexDirection: 'column'
                 }}
             >
-                <ShoppingCartIcon
+                <Typography
                     sx={{
-                        color: '#7C3AED',
-                        fontSize: 60
-                    }}
-                />
-                <Box
-                    sx={{
-                        display: 'flex',
-                        flexDirection: 'column'
+                        fontSize: 50,
+                        fontWeight: 900,
+                        color: '#F5F5F7',
+                        lineHeight: 1
                     }}
                 >
-                    <Typography
-                        sx={{
-                            fontSize: 50,
-                            fontWeight: 900,
-                            color: '#F5F5F7',
-                            lineHeight: 1
+                    Finalizar{' '}
+                    <span
+                        style={{
+                            color: '#7C3AED'
                         }}
                     >
-                        Finalizar{' '}
-                        <span
-                            style={{
-                                color: '#7C3AED'
-                            }}
-                        >
-                            Compra
-                        </span>
-                    </Typography>
-                    <Typography
-                        sx={{
-                            color: '#999',
-                            fontSize: 15,
-                            mt: 0.8
-                        }}
-                    >
-                        Confira seus dados antes de concluir sua compra.
-                    </Typography>
-                </Box>
+                        Compra
+                    </span>
+                </Typography>
+                <Typography
+                    sx={{
+                        color: '#999',
+                        fontSize: 15,
+                        mt: 0.8
+                    }}
+                >
+                    Confira seus dados antes de concluir sua compra.
+                </Typography>
             </Box>
+        </Box>
 
 
 
@@ -1134,40 +1138,37 @@ function FinalizarCompra({
                                         }}
                                     />
                                 }
-                                onClick={() => {
-                                    alert(
-                                        'Pedido confirmado!'
-                                    );
+                                 onClick={() => {
+                                    setPedidoConfirmado(true);
+                                    limparCarrinho();
+                                    setTimeout(() => {
+                                        navigate('/carrinho', {
+                                            state: {
+                                                pedidoConfirmado: true
+                                            }
+                                        });
+                                    }, 1500);
                                 }}
                                 sx={{
                                     position: 'relative',
                                     zIndex: 1,
-
                                     width:
                                         'calc(100% - 10px)',
-
                                     ml: '5px',
                                     height: 45,
-
                                     backgroundColor:
                                         '#7C3AED',
-
                                     color: '#FFFFFF',
                                     fontSize: 12,
                                     fontWeight: 900,
-
                                     borderRadius: 0,
-
                                     clipPath:
                                         'polygon(6% 0, 100% 0, 94% 100%, 0 100%)',
-
                                     boxShadow:
                                         '0 0 12px #7c3aed59',
-
                                     '&:hover': {
                                         backgroundColor:
                                             '#531DA8',
-
                                         boxShadow:
                                             '0 0 18px #7c3aed80'
                                     }
@@ -1286,19 +1287,18 @@ function FinalizarCompra({
                                     objectFit: 'contain'
                                 }}
                             />
-
                         </Box>
-
                     </Box>
-
                 </Box>
-
             </Container>
-
         </Box>
-
     );
 }
+
+
+
+
+{/* ==================== CAMPO ==================== */}
 
 function Campo({
     label,

@@ -16,7 +16,7 @@ import banner2 from '../assets/banner2.png';
 
 
 
-{/* ==================== BOX ==================== */}
+{/* ==================== COMPONENTES ==================== */}
 
 function Login({ onLogin }) {
   const [email, setEmail] = useState('');
@@ -177,63 +177,55 @@ function Login({ onLogin }) {
 
 {/* ==================== AREA DO EMAIL ==================== */}
 
-          <TextField
-            fullWidth
-            label="E-mail"
-            type="email"
-            autoFocus
-            value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-              setErro('');
-            }}
-            margin="normal"
-
-            slotProps={{
-              input: {
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <EmailIcon
-                      sx={{
-                        color: '#7C3AED',
-                        fontSize: '25px'
-                      }}
-                    />
-                  </InputAdornment>
-                )
-              }
-            }}
-
-            sx={{
-              mb: 2,
-
-              '& .MuiOutlinedInput-root': {
-                color: '#fff',
-                borderRadius: '8px',
-                background: '#ffffff05',
-
-                '& fieldset': {
-                  borderColor: '#3a1b61'
-                },
-
-                '&:hover fieldset': {
-                  borderColor: '#7B2CFF'
-                },
-
-                '&.Mui-focused fieldset': {
-                  borderColor: '#9B4DFF'
-                }
+        <TextField
+          fullWidth
+          label="E-mail"
+          type="email"
+          autoFocus
+          value={email}
+          onChange={(e) => {
+            setEmail(e.target.value);
+            setErro('');
+          }}
+          margin="normal"
+          slotProps={{
+            input: {
+              startAdornment: (
+                <InputAdornment position="start">
+                  <EmailIcon
+                    sx={{
+                      color: '#7C3AED',
+                      fontSize: '25px'
+                    }}
+                  />
+                </InputAdornment>
+              )
+            }
+          }}
+          sx={{
+            mb: 2,
+            '& .MuiOutlinedInput-root': {
+              color: '#fff',
+              borderRadius: '8px',
+              background: '#ffffff05',
+              '& fieldset': {
+                borderColor: '#3a1b61'
               },
-
-              '& .MuiInputLabel-root': {
-                color: '#777'
+              '&:hover fieldset': {
+                borderColor: '#7B2CFF'
               },
-
-              '& .MuiInputLabel-root.Mui-focused': {
-                color: '#9B4DFF'
+              '&.Mui-focused fieldset': {
+                borderColor: '#9B4DFF'
               }
-            }}
-          />
+            },
+            '& .MuiInputLabel-root': {
+              color: '#777'
+            },
+            '& .MuiInputLabel-root.Mui-focused': {
+              color: '#9B4DFF'
+            }
+          }}
+        />
 
 
 
@@ -573,7 +565,7 @@ function Login({ onLogin }) {
                 }
               }}
             >
-              Criar conta ⭢
+              Criar conta 🢡
             </Box>
 
           </Typography>
