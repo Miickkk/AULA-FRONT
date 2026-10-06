@@ -46,15 +46,14 @@
   - pagina pra cada catalogo
   - adicionar ao carrinho
   - checkout do carrinho
+  - ver todos = pagina de todos dos catalogos
   - BANCO MOCK
+  - rotas
 
 ## **O QUE NAO TEMOS ATE AGR** ##
 
-**ROTAS**
-  - inicio
   - conta criar
   - botao de promocao = pagina de produtos em promocao
-  - ver todos = pagina de todos dos catalogos
   - pagina para cada produto (mockpost)
 
 **USUARIOS** 
