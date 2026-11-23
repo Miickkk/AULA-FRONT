@@ -49,14 +49,8 @@
   - ver todos = pagina de todos dos catalogos
   - BANCO MOCK
   - rotas
-
-## **O QUE NAO TEMOS ATE AGR** ##
-
   - conta criar
-  - botao de promocao = pagina de produtos em promocao
-  - pagina para cada produto (mockpost)
 
 **USUARIOS** 
-  -Cliente (processo)
-  -ADM
+  -Cliente 
   
