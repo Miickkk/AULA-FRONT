@@ -8,6 +8,7 @@ import Carrinho from './pages/Carrinho'
 import Header from './components/Header'
 import Checkout from './pages/Checkout'
 import Produtos from './pages/Produtos'
+import CadastroUsuario from './pages/CadastroUsuario';
 
 
 
@@ -279,6 +280,12 @@ function App() {
               />
             </>
           }
+        />
+        
+        <Route
+          path="/cadastro"
+          element={<CadastroUsuario
+          />}
         />
 
       </Routes>

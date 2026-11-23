@@ -7,7 +7,7 @@ import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import GoogleIcon from '@mui/icons-material/Google';
-import { mockUsuarios } from '../data/mockUsuarios';
+import { obterUsuarios } from '../data/mockUsuarios';
 import logo from '../assets/icons/logo2.png';
 import EmailIcon from '@mui/icons-material/Email';
 import LockIcon from '@mui/icons-material/Lock';
@@ -34,7 +34,7 @@ function Login({ onLogin }) {
       return;
     }
 
-    const usuario = mockUsuarios.find(
+    const usuario = obterUsuarios().find(
       (u) => u.email === email && u.senha === senha
     );
 
@@ -292,69 +292,6 @@ function Login({ onLogin }) {
 
 
 
-{/* ==================== ESQUECEU A SENHA ==================== */}
-
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-
-              mt: 1,
-              mb: 2,
-
-              flexWrap: 'wrap',
-              gap: 1
-            }}
-          >
-
-            <FormControlLabel
-              control={
-                <Checkbox
-                  sx={{
-                    color: '#555',
-
-                    '&.Mui-checked': {
-                      color: '#FFD500'
-                    }
-                  }}
-                />
-              }
-
-              label={
-                <Typography
-                  sx={{
-                    color: '#888',
-                    fontSize: '13px'
-                  }}
-                >
-                  Lembrar de mim
-                </Typography>
-              }
-            />
-
-
-            <Typography
-              component="span"
-
-              sx={{
-                color: '#FFD500',
-                fontSize: '13px',
-                cursor: 'pointer',
-
-                '&:hover': {
-                  color: '#fff'
-                }
-              }}
-            >
-              Esqueceu a senha?
-            </Typography>
-
-          </Box>
-
-
-
-
 {/* ==================== MENSAGEM DE ERRO ==================== */}
 
           {erro && (
@@ -460,81 +397,6 @@ function Login({ onLogin }) {
 
 
 
-
-{/* ==================== OU ==================== */}
-
-          <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-
-              my: 3
-            }}
-          >
-
-            <Divider
-              sx={{
-                flex: 1,
-                borderColor: '#292929'
-              }}
-            />
-
-            <Typography
-              sx={{
-                mx: 2,
-                color: '#666',
-                fontSize: '12px'
-              }}
-            >
-              OU
-            </Typography>
-
-            <Divider
-              sx={{
-                flex: 1,
-                borderColor: '#292929'
-              }}
-            />
-
-          </Box>
-
-
-
-
-{/* ==================== AREA DO GOOGLE ==================== */}
-
-          <Button
-            fullWidth
-
-            variant="outlined"
-
-            startIcon={<GoogleIcon />}
-
-            sx={{
-              height: 50,
-
-              color: '#ddd',
-
-              borderColor: '#333',
-
-              borderRadius: '7px',
-
-              textTransform: 'none',
-
-              '&:hover': {
-                borderColor: '#7B2CFF',
-
-                background:
-                  '#7b2cff0f'
-              }
-            }}
-          >
-            Entrar com o Google
-          </Button>
-
-
-
-
 {/* ==================== CRIA CONTA ==================== */}
 
           <Typography
@@ -551,29 +413,23 @@ function Login({ onLogin }) {
             Ainda não tem uma conta?{' '}
 
             <Box
-              component="span"
-
-              sx={{
-                color: '#7C3AED',
-
-                cursor: 'pointer',
-
-                fontWeight: 600,
-
-                '&:hover': {
-                  color: '#fff'
-                }
-              }}
-            >
-              Criar conta 🢡
-            </Box>
+                component="span"
+                onClick={() => navigate('/cadastro')}
+                sx={{
+                  color: '#7C3AED',
+                  cursor: 'pointer',
+                  fontWeight: 600,
+                  '&:hover': {
+                    color: '#fff'
+                  }
+                }}
+              >
+                Criar conta 🢡
+              </Box>
 
           </Typography>
-
         </Box>
-
       </Box>
-
     </Box>
   );
 }

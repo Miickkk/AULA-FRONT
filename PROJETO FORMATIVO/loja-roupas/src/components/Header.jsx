@@ -27,14 +27,6 @@ function Header({ usuario, onLogout }) {
         TAMBÉM VESTE.
       </div>
 
-      <div className="header-search">
-        <input
-          type="text"
-          placeholder="Buscar por anime, jogo, personagem..."
-        />
-        <SearchIcon />
-      </div>
-
 
 
 

@@ -152,21 +152,6 @@ return (
                 >
                     Roupas e acessórios de todo o universo geek.
                 </Typography>
-                <Button
-                    variant="contained"
-                    sx={{
-                        backgroundColor: '#FFD21F',
-                        color: '#08080D',
-                        fontWeight: 'bold',
-                        px: 4,
-                        py: 1.5,
-                        '&:hover': {
-                            backgroundColor: '#F5C400',
-                        },
-                    }}
-                >
-                    VER PROMOÇÕES 🢡
-                </Button>
             </Box>
         </Box>
 
